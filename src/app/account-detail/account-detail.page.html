@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Account: {{accountToQuery}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="accountToQuery !== ''" class="ion-padding">
+  <p>Account Number: <b>{{account.account}}</b> </p>
+  <p>Balance: <b>{{account.balance}}</b> </p>
+  <p>Overdraft: <b>{{account.overdraft}}</b> </p>
+
+  <ion-button color="primary" expand="block" class="ion-margin-top" color="secondary" (click)="withdraw()" style="margin-top: 20dp;">Withdraw</ion-button>
+  <ion-button color="primary" expand="block" class="ion-margin-top" color="primary" (click)="deposit()">Deposit</ion-button>
+
+</ion-content>
